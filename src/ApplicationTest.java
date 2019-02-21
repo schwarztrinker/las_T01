@@ -1,5 +1,10 @@
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class ApplicationTest {
@@ -21,6 +26,7 @@ class ApplicationTest {
         application.loadRecords();
 
         //To Test
+        assertEquals(Long.valueOf(20752), Long.valueOf(application.executeSQL02()));
     }
 
     @Test
@@ -30,6 +36,7 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        assertEquals(Long.valueOf(2246), Long.valueOf(application.executeSQL03()));
     }
 
     @Test
@@ -39,6 +46,7 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        assertEquals(Long.valueOf(3013), Long.valueOf(application.executeSQL04()));
     }
 
     @Test
@@ -48,6 +56,7 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        assertEquals(Long.valueOf(65719), Long.valueOf(application.executeSQL05()));
     }
 
     @Test
@@ -58,6 +67,7 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        assertEquals(Double.valueOf(5.521517140773159), Double.valueOf(application.executeSQL06()));
     }
 
     @Test
@@ -67,6 +77,12 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        List<Integer> list = new ArrayList<>();
+        list.add(8);
+        list.add(9);
+        list.add(8);
+        assertEquals(list, application.executeSQL07());
+
     }
 
     @Test
@@ -76,6 +92,18 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        List<Integer> list = new ArrayList<>();
+        list.add(12);
+        list.add(12);
+        list.add(9);
+        list.add(9);
+        list.add(8);
+        list.add(5);
+        list.add(5);
+        list.add(3);
+        list.add(3);
+        assertEquals(list, application.executeSQL08());
+
     }
 
     @Test
@@ -92,6 +120,15 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        Map<String, Long> list = new HashMap<>();
+        list.put("fri", 142658L);
+        list.put("mon",	142951L);
+        list.put("sat",	142677L);
+        list.put("sun",	143036L);
+        list.put("thu",	142739L);
+        list.put("tue",	142639L);
+        list.put("wed",	143300L);
+        assertEquals(list, application.executeSQL09());
     }
 
     @Test
@@ -109,6 +146,18 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        Map<String, Long> list = new HashMap<>();
+        list.put("a", 1536L);
+        list.put("b", 1536L);
+        list.put("c", 1533L);
+        list.put("d", 1586L);
+        list.put("e", 1547L);
+        list.put("f", 1534L);
+        list.put("g", 1550L);
+        list.put("h", 1546L);
+
+        assertEquals(list, application.executeSQL10());
+
     }
 
     @Test
@@ -125,6 +174,16 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        Map<String, Long> list = new HashMap<>();
+        list.put("fri", 2284L);
+        list.put("mon",	2201L);
+        list.put("sat",	2206L);
+        list.put("sun",	2251L);
+        list.put("thu",	2232L);
+        list.put("tue",	2229L);
+        list.put("wed",	2262L);
+        assertEquals(list, application.executeSQL11());
+
 
     }
 
@@ -139,6 +198,13 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        Map<String, Long> list = new HashMap<>();
+        list.put("m", 5503L);
+        list.put("r",	5565L);
+        list.put("s",	5546L);
+        list.put("w",	5639L);
+
+        assertEquals(list, application.executeSQL12());
     }
 
     @Test
@@ -160,17 +226,38 @@ class ApplicationTest {
         application.loadRecords();
 
         //to Test
+        Map<Integer, Integer> list = new HashMap<>();
+        list.put(1	,313465);
+        list.put(2,	304900);
+        list.put(3,	317270);
+        list.put(4,	318455);
+        list.put(5,	309630);
+        list.put(6,	312325);
+        list.put(7,	290420);
+        list.put(8,	312695);
+        list.put(9,	301245);
+        list.put(10,	319520);
+        list.put(11,	297555);
+        list.put(12,	299935);
+
+
+
+        assertEquals(list, application.executeSQL13());
+
     }
 
     @Test
-        //shift	Expr1001
-        //1	5,50086680574736
-        //4	5,4905296051177
     void executeSQL14() {
         Application application = new Application();
         application.loadRecords();
 
         //to Test
+        Map<Integer, Float> list = new HashMap<>();
+        list.put(1,	5.5037847F);
+        list.put(4,	5.5088186F);
+
+
+        assertEquals(list, application.executeSQL14());
     }
 
 
